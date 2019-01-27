@@ -2,7 +2,6 @@ use std::ptr::null_mut;
 use winapi::um::unknwnbase::{IUnknown, IUnknownVtbl};
 use winapi::um::mmdeviceapi::ERole;
 use winapi::shared::ntdef::{HRESULT, PCWSTR, LPWSTR};
-use winapi::shared::mmreg::WAVEFORMATEX;
 use winapi::um::combaseapi::{CoCreateInstance, CLSCTX_ALL};
 use winapi::Interface;
 
@@ -14,10 +13,11 @@ use winapi::Interface;
 
 RIDL!{#[uuid(0xf8679f50, 0x850a, 0x41cf, 0x9c, 0x72, 0x43, 0x0f, 0x29, 0x02, 0x90, 0xc8)]
 interface IPolicyConfig(IPolicyConfigVtbl): IUnknown(IUnknownVtbl) {
-    fn GetMixFormat(
-        a: PCWSTR,
-        b: *mut (*mut WAVEFORMATEX),
-    ) -> HRESULT,
+    // We don't actually care about any of the methods except SetDefaultEndpoint(), so
+    // we'll just put dummies in to ensure SetDefaultEndpoint() has the correct index in
+    // the vtable.
+
+    fn dummy1() -> (),
 
     fn dummy2() -> (),
 
@@ -41,7 +41,6 @@ interface IPolicyConfig(IPolicyConfigVtbl): IUnknown(IUnknownVtbl) {
         device_id: PCWSTR,
         role: ERole,
     ) -> HRESULT,
-    // TODO ADD MORE
 }}
 
 DEFINE_GUID!{CPolicyConfigClient, 0x870af99c, 0x171d, 0x4f9e, 0xaf, 0x0d, 0xe6, 0x3d, 0xf4, 0x0c, 0x2b, 0xc9}
