@@ -15,6 +15,10 @@ const DIALOG_BOX_WINDOW_CLASS: &'static [u8] = b"#32770\0";
 
 const SOUND_DIALOG_TITLE: &'static [u8] = b"Sound\0";
 
+const DEFAULT_AUDIO: &str = "Speakers (Realtek High Definition Audio)";
+
+const SPECIAL_AUDIO: &str = "55P607 (NVIDIA High Definition Audio)";
+
 fn main() {
     use winapi::um::objbase::CoInitialize;
     use std::ptr::null_mut;
@@ -33,7 +37,11 @@ fn main() {
         println!("No sound window found.");
     }
 
-    audio_devices::get_audio_devices();
+    let default_audio_id = audio_devices::get_audio_device_id(DEFAULT_AUDIO);
+    let special_audio_id = audio_devices::get_audio_device_id(SPECIAL_AUDIO);
+
+    println!("ID for default audio is {:?}.", default_audio_id);
+    println!("ID for special audio is {:?}.", special_audio_id);
 
     policy_config::get_policy_config_client();
 }

@@ -19,6 +19,7 @@ pub unsafe fn lpwstr_to_string(s: LPWSTR) -> String {
     os_string.into_string().unwrap()
 }
 
+#[derive(Debug)]
 pub struct TaskAllocatedLpwstr {
     ptr: LPWSTR,
 }
