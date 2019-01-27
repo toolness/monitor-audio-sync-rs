@@ -1,6 +1,6 @@
 use std::ffi::OsString;
 use std::os::windows::prelude::*;
-use winapi::shared::ntdef::{LPWSTR};
+use winapi::shared::ntdef::LPWSTR;
 use winapi::ctypes::c_void;
 use winapi::um::combaseapi::CoTaskMemFree;
 

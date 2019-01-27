@@ -43,5 +43,5 @@ fn main() {
     println!("ID for default audio is {:?}.", default_audio_id);
     println!("ID for special audio is {:?}.", special_audio_id);
 
-    policy_config::get_policy_config_client();
+    policy_config::set_default_audio_playback_device(default_audio_id.unwrap().get_ptr());
 }
