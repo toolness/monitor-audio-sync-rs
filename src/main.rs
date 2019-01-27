@@ -5,6 +5,7 @@ mod monitor;
 mod window;
 mod policy_config;
 mod hresult;
+mod audio_devices;
 
 const SPECIAL_DISPLAY: &'static [u8] = b"\\\\.\\DISPLAY3\0";
 
@@ -30,6 +31,8 @@ fn main() {
         // TODO: Run "control mmsys.cpl".
         println!("No sound window found.");
     }
+
+    audio_devices::get_audio_devices();
 
     policy_config::get_policy_config_client();
 }
