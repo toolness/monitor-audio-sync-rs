@@ -5,4 +5,4 @@ authors = ["Atul Varma <varmaa@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-winapi = { version = "0.3", features = ["winuser"] }
+winapi = { version = "0.3", features = ["winuser", "unknwnbase", "mmreg", "combaseapi", "winerror", "winbase", "objbase"] }
