@@ -87,6 +87,16 @@ pub fn get_audio_devices() {
 
         println!("Friendly name is {}.", friendly_name);
 
+        let mut id_lpwstr: LPWSTR = null_mut();
+
+        validate_hresult("calling GetId()", unsafe {
+            (*device).GetId(&mut id_lpwstr)
+        });
+
+        let id = super::lpwstr::TaskAllocatedLpwstr::new(id_lpwstr);
+
+        println!("  Its ID is {}.", unsafe { id.to_string() });
+
         validate_hresult("calling FreePropVariantArray()", unsafe {
             FreePropVariantArray(1, &mut variant)
         });
