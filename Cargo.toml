@@ -14,4 +14,6 @@ winapi = { version = "0.3", features = [
     "winbase",
     "objbase",
     "mmdeviceapi",
+    "coml2api",
+    "devpkey"
 ] }

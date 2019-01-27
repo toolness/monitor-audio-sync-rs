@@ -1,4 +1,4 @@
-#[macro_use(RIDL, DEFINE_GUID)]
+#[macro_use(RIDL, DEFINE_GUID, DEFINE_PROPERTYKEY)]
 extern crate winapi;
 
 mod monitor;
@@ -6,6 +6,7 @@ mod window;
 mod policy_config;
 mod hresult;
 mod audio_devices;
+mod lpwstr;
 
 const SPECIAL_DISPLAY: &'static [u8] = b"\\\\.\\DISPLAY3\0";
 
