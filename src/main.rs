@@ -22,9 +22,6 @@ fn main() {
         CoInitialize(null_mut())
     });
 
-    // This will just print out diagnostic information about our audio devices.
-    audio_devices::get_audio_device_id("");
-
     let interval = time::Duration::from_secs(2);
     let mut current_primary_monitor_is_special = None;
 
@@ -34,7 +31,7 @@ fn main() {
         if current_primary_monitor_is_special != Some(is_special) {
             let name = if is_special { SPECIAL_AUDIO } else { DEFAULT_AUDIO };
             if let Some(id) = audio_devices::get_audio_device_id(name) {
-                println!("Changing audio device to {} - {:?}.", name, id);
+                println!("Changing audio device to {}.", name);
                 policy_config::set_default_audio_playback_device(id.get_ptr());
             }
             current_primary_monitor_is_special = Some(is_special);

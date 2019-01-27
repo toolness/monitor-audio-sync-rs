@@ -87,7 +87,7 @@ pub fn get_audio_device_id(name: &str) -> Option<TaskAllocatedLpwstr> {
 
         let friendly_name = unsafe { super::lpwstr::lpwstr_to_string(variant_lpwstr.pwsz_val) };
 
-        println!("Friendly name is {}.", friendly_name);
+        println!("{}. {}", i + 1, friendly_name);
 
         let mut id_lpwstr: LPWSTR = null_mut();
 
@@ -97,7 +97,7 @@ pub fn get_audio_device_id(name: &str) -> Option<TaskAllocatedLpwstr> {
 
         let id = super::lpwstr::TaskAllocatedLpwstr::new(id_lpwstr);
 
-        println!("  Its ID is {}.", unsafe { id.to_string() });
+        println!("   ID: {}", unsafe { id.to_string() });
 
         if friendly_name.as_str() == name {
             result = Some(id);
