@@ -1,3 +1,7 @@
+// Uncomment the following line to make it possible to
+// run the program in console mode.
+#![windows_subsystem = "windows"]
+
 #[macro_use(RIDL, DEFINE_GUID, DEFINE_PROPERTYKEY)]
 extern crate winapi;
 
