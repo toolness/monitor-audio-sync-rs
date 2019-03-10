@@ -36,3 +36,12 @@ of `main.rs`:
 ```
 
 Then make changes and run `cargo run` to try it out.
+
+## Other tips
+
+To see if the tool is running without killing it,
+try:
+
+```
+tasklist | grep monitor
+```
