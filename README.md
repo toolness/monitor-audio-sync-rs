@@ -8,7 +8,7 @@ audio device becomes the primary audio device.
 First, kill any running instances of the tool:
 
 ```
-taskkill /F /IM monitor-audio-sync-rs.exe
+taskkill /IM monitor-audio-sync-rs.exe
 ```
 
 Then install it:
