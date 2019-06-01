@@ -20,5 +20,13 @@ pub fn is_display_primary_monitor(display: &[u8]) -> bool {
 
     let arr = unsafe { &*(&info.szDevice as *const [i8; CCHDEVICENAME] as *const [u8; CCHDEVICENAME]) };
 
+    #[cfg(debug_assertions)]
+    unsafe {
+        println!(
+            "The current display is: {}",
+            std::ffi::CStr::from_ptr(&info.szDevice as *const i8).to_string_lossy()
+        );
+    }
+
     &arr[0..display.len()] == display
 }

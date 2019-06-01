@@ -1,6 +1,7 @@
-// Uncomment the following line to make it possible to
-// run the program in console mode.
-#![windows_subsystem = "windows"]
+#![cfg_attr(debug_assertions, windows_subsystem = "console")]
+#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+#![allow(non_snake_case)]
+#![allow(non_upper_case_globals)]
 
 #[macro_use(RIDL, DEFINE_GUID, DEFINE_PROPERTYKEY)]
 extern crate winapi;

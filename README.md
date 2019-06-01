@@ -28,13 +28,6 @@ and creating a shortcut to the executable
 Use the `taskkill` command above to kill any
 running instances of the tool.
 
-Then uncomment the following line at the top
-of `main.rs`:
-
-```
-#![windows_subsystem = "windows"]
-```
-
 Then make changes and run `cargo run` to try it out.
 
 ## Other tips
