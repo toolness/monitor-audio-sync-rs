@@ -3,6 +3,17 @@ different audio devices, so that when a particular
 monitor becomes the primary monitor, its associated
 audio device becomes the primary audio device.
 
+## Configuration
+
+The program's configuration is baked into the binary.
+To set it up, run:
+
+```
+copy config.sample.rs src\config.rs
+```
+
+Then edit `src\config.rs` as needed.
+
 ## Installation
 
 First, kill any running instances of the tool:
