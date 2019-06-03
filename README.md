@@ -1,4 +1,4 @@
-This is a program that syncs primary monitors with
+This is a Windows program that syncs primary monitors with
 different audio devices, so that when a particular
 monitor becomes the primary monitor, its associated
 audio device becomes the primary audio device.
@@ -49,3 +49,7 @@ try:
 ```
 tasklist | grep monitor
 ```
+
+## License
+
+[CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/)
