@@ -6,9 +6,9 @@
 // stdout of the program.
 pub const SPECIAL_DISPLAY: &'static [u8] = b"\\\\.\\DISPLAY3\0";
 
-// The audio device that you normally play audio from. This needs
-// to be exactly the same as it appears in the Sound control panel
-// and elsewhere in the Windows UI.
+// The audio device that you normally play audio from. You can see
+// a list of your audio devices by running `cargo run` and observing
+// the stdout of the program.
 pub const DEFAULT_AUDIO: &str = "Speakers (Realtek High Definition Audio)";
 
 // The audio device you want to automatically switch to when
